@@ -1,0 +1,9 @@
+# Build output (attach the built DLL to GitHub releases instead)
+server/bin/
+server/obj/
+*.user
+.vs/
+.vscode/
+.idea/
+server/tests/bin/
+server/tests/obj/

@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <!-- FiveM only loads server assemblies whose file name ends in .net.dll -->
+    <AssemblyName>PazTyreSlashing.Server.net</AssemblyName>
+    <RootNamespace>PazTyreSlashing.Server</RootNamespace>
+    <OutputPath>bin\</OutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+    <DebugType>portable</DebugType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Provided by the FXServer runtime; compile against it but never copy it. -->
+    <Compile Remove="tests/**" />
+    <PackageReference Include="CitizenFX.Core.Server" Version="1.0.*" ExcludeAssets="runtime" />
+    <!-- Needed for `dynamic` export calls; the FXServer Mono runtime ships Microsoft.CSharp.dll. -->
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" ExcludeAssets="runtime" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,91 @@
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  height: 100%;
+  background: transparent;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: #f1f3f5;
+  overflow: hidden;
+  user-select: none;
+}
+
+.hidden { display: none !important; }
+
+#minigame {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 340px;
+  padding: 20px;
+  background: rgba(20, 21, 23, 0.92);
+  border: 1px solid #373a40;
+  border-radius: 12px;
+  text-align: center;
+}
+
+h1 { margin: 0 0 14px; font-size: 16px; font-weight: 600; }
+
+#tyre {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  margin: 0 auto;
+  border-radius: 50%;
+  background: repeating-conic-gradient(#1b1b1b 0 6deg, #262626 6deg 12deg);
+  box-shadow: inset 0 0 0 14px #111, 0 6px 18px rgba(0, 0, 0, 0.5);
+}
+
+.rim {
+  position: absolute;
+  inset: 62px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #9aa0a6 0 20%, #5f6368 21% 60%, #3c4043 61%);
+}
+
+.spot {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  margin: -15px 0 0 -15px;
+  border-radius: 50%;
+  border: 2px solid #5c5f66;
+  background: #2c2e33;
+  cursor: pointer;
+  padding: 0;
+}
+
+.spot.current { border-color: #fcc419; background: #3b3413; }
+.spot.done { border-color: #40c057; background: #2b8a3e; cursor: default; }
+.spot.done::after { content: "✕"; color: #fff; font-size: 14px; line-height: 26px; }
+
+.ring {
+  position: absolute;
+  inset: -2px;
+  border-radius: 50%;
+  border: 3px solid #fcc419;
+  pointer-events: none;
+}
+
+.ring.in-window { border-color: #40c057; }
+
+#progress { margin-top: 14px; display: flex; justify-content: center; gap: 6px; }
+.pip { width: 26px; height: 6px; border-radius: 3px; background: #373a40; }
+.pip.done { background: #40c057; }
+
+#timer { margin-top: 12px; height: 6px; border-radius: 3px; background: #373a40; overflow: hidden; }
+#timer-fill { height: 100%; width: 100%; background: #fcc419; }
+
+#hint { margin: 10px 0 0; font-size: 12px; color: #a6a7ab; }
+#feedback { min-height: 18px; margin: 6px 0 0; font-size: 13px; font-weight: 600; }
+#feedback.good { color: #40c057; }
+#feedback.bad { color: #fa5252; }
+
+kbd {
+  padding: 1px 6px;
+  border: 1px solid #5c5f66;
+  border-radius: 4px;
+  background: #25262b;
+  font-family: inherit;
+}

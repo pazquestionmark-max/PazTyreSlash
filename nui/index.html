@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Tyre Slashing</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="minigame" class="hidden" role="dialog" aria-labelledby="mg-title">
+    <h1 id="mg-title">Puncture the tyre</h1>
+    <div id="tyre">
+      <div class="rim"></div>
+      <div id="spots"></div>
+    </div>
+    <div id="progress" aria-live="polite"></div>
+    <div id="timer"><div id="timer-fill"></div></div>
+    <p id="hint"></p>
+    <p id="feedback" aria-live="assertive"></p>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

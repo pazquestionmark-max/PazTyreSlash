@@ -1,0 +1,136 @@
+{
+  "debug": false,
+
+  "command": {
+    "enabled": true,
+    "name": "slashtyre"
+  },
+
+  "target": {
+    "enabled": true,
+    "icon": "fa-solid fa-scissors",
+    "distance": 1.8
+  },
+
+  "crouch": {
+    "required": true
+  },
+
+  "interaction": {
+    "tyreDistance": 1.6,
+    "serverMaxDistance": 8.0
+  },
+
+  "notify": "qbx_core",
+
+  "weapons": [
+    { "weapon": "WEAPON_KNIFE", "item": "WEAPON_KNIFE", "enabled": true },
+    { "weapon": "WEAPON_HATCHET", "item": "WEAPON_HATCHET", "enabled": true },
+    { "weapon": "WEAPON_DAGGER", "item": "WEAPON_DAGGER", "enabled": true },
+    { "weapon": "WEAPON_SWITCHBLADE", "item": "WEAPON_SWITCHBLADE", "enabled": true },
+    { "weapon": "WEAPON_BATTLEAXE", "item": "WEAPON_BATTLEAXE", "enabled": true },
+    { "weapon": "WEAPON_STONE_HATCHET", "item": "WEAPON_STONE_HATCHET", "enabled": true },
+    { "weapon": "WEAPON_MACHETE", "item": "WEAPON_MACHETE", "enabled": true },
+    { "weapon": "WEAPON_KNUCKLE", "item": "WEAPON_KNUCKLE", "enabled": false }
+  ],
+
+  "inventory": {
+    "requireItem": true,
+    "requireEquippedInOxInventory": true
+  },
+
+  "durability": {
+    "enabled": false,
+    "amount": 2.0
+  },
+
+  "wheels": [
+    { "index": 0, "bone": "wheel_lf", "label": "Front left" },
+    { "index": 1, "bone": "wheel_rf", "label": "Front right" },
+    { "index": 2, "bone": "wheel_lm1", "label": "Middle left" },
+    { "index": 3, "bone": "wheel_rm1", "label": "Middle right" },
+    { "index": 4, "bone": "wheel_lr", "label": "Rear left" },
+    { "index": 5, "bone": "wheel_rr", "label": "Rear right" },
+    { "index": 45, "bone": "wheel_lm2", "label": "Middle left (2)" },
+    { "index": 47, "bone": "wheel_rm2", "label": "Middle right (2)" }
+  ],
+
+  "puncture": {
+    "onRim": false,
+    "damage": 1000.0,
+    "keepDriveable": true
+  },
+
+  "breakage": {
+    "enabled": true,
+    "chance": 0.02
+  },
+
+  "sounds": {
+    "enabled": true,
+    "volume": 0.7,
+    "stabRange": 15.0,
+    "punctureRange": 35.0
+  },
+
+  "vehicles": {
+    "excludedModels": [],
+    "excludedTypes": ["boat", "heli", "plane", "submarine", "train"]
+  },
+
+  "animation": {
+    "dict": "melee@knife@streamed_core_fps",
+    "clip": "ground_attack_on_spot",
+    "flag": 1,
+    "minDurationMs": 1500,
+    "walkToTyre": true
+  },
+
+  "minigame": {
+    "spots": 4,
+    "difficulty": "normal",
+    "timeLimitSeconds": 10,
+    "inputKey": "E",
+    "cancelKey": "Escape",
+    "minMsPerSpot": 250,
+    "difficulties": {
+      "easy": { "cycleMs": 1400, "window": 0.35, "maxMisses": 2 },
+      "normal": { "cycleMs": 1100, "window": 0.25, "maxMisses": 1 },
+      "hard": { "cycleMs": 800, "window": 0.18, "maxMisses": 0 }
+    }
+  },
+
+  "security": {
+    "cooldownSeconds": 10,
+    "sessionTimeoutSeconds": 25,
+    "rateLimitWindowSeconds": 5,
+    "rateLimitMaxEvents": 6,
+    "punctureVerifyRetries": 3
+  },
+
+  "messages": {
+    "not_crouched": "You need to be crouched to reach the tyre.",
+    "weapon_snapped": "Your blade snapped!",
+    "no_weapon": "You need a knife or blade to do that.",
+    "weapon_not_equipped": "Hold a supported blade in your hands first.",
+    "missing_item": "You don't have that weapon in your inventory.",
+    "too_far": "You are too far from the tyre.",
+    "no_vehicle": "No vehicle nearby.",
+    "no_tyre": "No tyre within reach.",
+    "invalid_target": "You can't slash that.",
+    "already_punctured": "That tyre is already punctured.",
+    "incapacitated": "You can't do that right now.",
+    "busy": "You are already doing something.",
+    "tyre_busy": "Someone is already working on that tyre.",
+    "cooldown": "Wait a moment before trying again.",
+    "started": "Slashing the tyre...",
+    "minigame_success": "You cut through the rubber.",
+    "minigame_failed": "You failed to puncture the tyre.",
+    "cancelled": "Tyre slashing cancelled.",
+    "expired": "You took too long.",
+    "punctured": "Tyre punctured.",
+    "server_error": "Something went wrong. Try again.",
+    "select_tyre": "Select a tyre",
+    "target_label": "Slash this tyre"
+  }
+}
