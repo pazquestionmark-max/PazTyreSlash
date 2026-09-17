@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- Plain assert-based checks for the session state machine. Run from server/ with: dotnet run (project tests) -->
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="../src/SessionManager.cs" />
+    <Compile Include="../src/Config.cs" />
+    <PackageReference Include="CitizenFX.Core.Server" Version="1.0.*" />
+  </ItemGroup>
+</Project>
